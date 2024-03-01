@@ -15,7 +15,6 @@ class CoffeeDetailsScreen extends StatelessWidget {
               height: MediaQuery.sizeOf(context).height * 0.6,
               child: Stack(
                 children: [
-
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.6,
                     width: MediaQuery.sizeOf(context).width,
@@ -26,27 +25,31 @@ class CoffeeDetailsScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Column(crossAxisAlignment: CrossAxisAlignment.start,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-
                       SafeArea(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Positioned(
-                                child: InkWell(
-                                  onTap: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: Container(
-                                    height: 30,
-                                    width: 30,
-                                    decoration: BoxDecoration(
-                                        color: Colors.grey,
-                                        borderRadius: BorderRadius.circular(10)),
-                                    child: Icon(Icons.arrow_back),
-                                  ),
-                                ),),
-                          ),),Spacer(),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Positioned(
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.pop(context);
+                              },
+                              child: Container(
+                                height: 30,
+                                width: 30,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Icon(Icons.arrow_back),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Spacer(),
                       Positioned(
                         bottom: 0.w,
                         child: Column(
@@ -65,7 +68,8 @@ class CoffeeDetailsScreen extends StatelessWidget {
                                   Expanded(
                                     flex: 3,
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Text(
                                           'Cappuccino',
@@ -152,7 +156,8 @@ class CoffeeDetailsScreen extends StatelessWidget {
                                           ),
                                           child: Text(
                                             "Medium Roasted",
-                                            style: TextStyle(color: Colors.grey),
+                                            style:
+                                                TextStyle(color: Colors.grey),
                                           ),
                                         )
                                       ],
