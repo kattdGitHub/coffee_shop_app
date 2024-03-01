@@ -26,8 +26,9 @@ class _DashboardState extends State<Dashboard> {
           SizedBox(),
         ],
       ),
+
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.orange,
         currentIndex: currentIndex,
         onTap: (value) => setState(() {
           currentIndex = value;
@@ -44,7 +45,7 @@ class _DashboardState extends State<Dashboard> {
             icon: Icon(
               Icons.shop_2_outlined,
             ),
-            label: 'Item 3',
+            label: 'Cart',
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.heart),
@@ -52,7 +53,7 @@ class _DashboardState extends State<Dashboard> {
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.bell),
-            label: 'Item 5',
+            label: 'Oder',
           ),
         ],
       ),
