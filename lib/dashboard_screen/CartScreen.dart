@@ -21,7 +21,7 @@ class CartScreen extends StatelessWidget {
     ItemModel(title: "500gm", price: 4.20),
     ItemModel(title: "1kg", price: 4.20),
   ];
- List<ItemModel> iconsGroup10 = [
+  List<ItemModel> iconsGroup10 = [
     ItemModel(title: "S", price: 4.20),
     ItemModel(title: "M", price: 4.20),
     ItemModel(title: "L", price: 4.20),
@@ -106,10 +106,73 @@ class CartScreen extends StatelessWidget {
                 height: 9.h,
               ),
               customCoffeeCard(
-                list: assetsBean,
+                  list: assetsBean,
                   image: Assets.assetsBean,
                   name: 'Liberica Coffee Beans',
                   sname: '"With steamed milk"'),
+              SizedBox(
+                height: 15.h,
+              ),
+              Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Total Price",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Column(
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                "\$",
+                                style: TextStyle(
+                                  color: Colors.deepOrangeAccent,
+                                  fontSize: 25.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                "10.40",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 30.w,
+                  ),
+                  Container(
+                    height: 60.h,
+                    width: 180.w,
+                    decoration: BoxDecoration(
+                      color: Colors.deepOrangeAccent,
+                      borderRadius: BorderRadius.circular(15.r),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Pay",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30.sp,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              )
             ],
           ),
         ),
@@ -265,8 +328,6 @@ class CartScreen extends StatelessWidget {
   }) {
     return Container(
       padding: EdgeInsets.only(top: 10),
-      // width: 330,
-      // height: 250,`
       decoration: BoxDecoration(
         color: Colors.grey,
         borderRadius: BorderRadius.circular(12),

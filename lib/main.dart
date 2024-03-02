@@ -1,4 +1,5 @@
 import 'package:coffe_shop/dashboard_screen/CoffeeDetailsScreen.dart';
+import 'package:coffe_shop/dashboard_screen/PaymentScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dashboard_screen/DashBoard.dart';
@@ -19,12 +20,12 @@ class MyApp extends StatelessWidget {
         builder: (_ , child)  {
         return MaterialApp(
           title: 'Coffe Shop',
+          themeMode: ThemeMode.dark,
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
-            bottomAppBarTheme: BottomAppBarTheme(color: Colors.black,)
           ),
-          home:Dashboard(),
+          home:PaymentScreen (),
 
         );
       }

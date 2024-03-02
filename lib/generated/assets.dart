@@ -3,12 +3,16 @@ class Assets {
   Assets._();
 
   static const String assetsBean = 'assets/bean.jpeg';
+  static const String assetsGroup = 'assets/Group.png';
+  static const String assetsVector = 'assets/Vector.png';
   static const String dashboardScreenBeanDetailsScreen = 'lib/dashboard_screen/BeanDetailsScreen.dart';
   static const String dashboardScreenCartScreen = 'lib/dashboard_screen/CartScreen.dart';
   static const String dashboardScreenCoffeeDetailsScreen = 'lib/dashboard_screen/CoffeeDetailsScreen.dart';
   static const String dashboardScreenDashBoard = 'lib/dashboard_screen/DashBoard.dart';
   static const String dashboardScreenHomeScreen = 'lib/dashboard_screen/home_screen.dart';
+  static const String dashboardScreenPaymentScreen = 'lib/dashboard_screen/PaymentScreen.dart';
   static const String generatedAssets = 'lib/generated/assets.dart';
+  static const String iconsAmazon = 'assets/icons/Amazon.png';
   static const String iconsElements = 'assets/icons/elements.png';
   static const String iconsGroup = 'assets/icons/Group.png';
   static const String iconsGroup10 = 'assets/icons/Group 10.png';
