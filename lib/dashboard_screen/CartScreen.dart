@@ -1,3 +1,5 @@
+import 'package:coffe_shop/dashboard_screen/PaymentScreen.dart';
+import 'package:coffe_shop/utils/helpers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -51,14 +53,14 @@ class CartScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 100.w,
+                    width: 130.w,
                   ),
                   Text(
                     "Cart",
                     style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
                   SizedBox(
-                    width: 100.w,
+                    width: 60.w,
                   ),
                   Container(
                     child: Image(
@@ -161,12 +163,15 @@ class CartScreen extends StatelessWidget {
                       color: Colors.deepOrangeAccent,
                       borderRadius: BorderRadius.circular(15.r),
                     ),
-                    child: Center(
-                      child: Text(
-                        "Pay",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 30.sp,
+                    child: InkWell(
+                      onTap: () => pushTo(context, PaymentScreen()),
+                      child: Center(
+                        child: Text(
+                          "Pay",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 30.sp,
+                          ),
                         ),
                       ),
                     ),

@@ -1,21 +1,62 @@
-import 'package:coffe_shop/dashboard_screen/CartScreen.dart';
-import 'package:coffe_shop/utils/helpers.dart';
+import 'package:coffe_shop/generated/assets.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CoffeeDetailsScreen extends StatelessWidget {
-  const CoffeeDetailsScreen({Key? key});
+class Favorites extends StatelessWidget {
+  const Favorites({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        actions: [
+          Container(
+            width: 30.w,
+            height: 30.h,
+            decoration: BoxDecoration(
+              color: Color(0xff262B33).withOpacity(0.4),
+              borderRadius: BorderRadius.circular(7.r),
+            ),
+            child: Image(
+              image: AssetImage(Assets.iconsElements),
+            ),
+          ),
+          SizedBox(
+            width: 90.w,
+          ),
+          Text(
+            "Favorites",
+            style: TextStyle(color: Colors.white, fontSize: 25),
+          ),
+          SizedBox(
+            width: 70.w,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: Container(
+              child: Image(
+                image: AssetImage(Assets.iconsIntersect),
+              ),
+              height: 30.h,
+              width: 30.h,
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.circular(8.r),
+              ),
+            ),
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.6,
               child: Stack(
+
                 children: [
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.6,
@@ -30,7 +71,30 @@ class CoffeeDetailsScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-
+                      SafeArea(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 320, top: 15),
+                          child: Positioned(
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.pop(context);
+                              },
+                              child: Container(
+                                height: 30,
+                                width: 30,
+                                decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Icon(
+                                  Icons.heart_broken_outlined,
+                                  color: Colors.red,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                       Spacer(),
                       Positioned(
                         bottom: 0.w,
@@ -68,6 +132,26 @@ class CoffeeDetailsScreen extends StatelessWidget {
                                             color: Colors.white,
                                           ),
                                         ),
+                                        Icon(
+                                          Icons.star_border_outlined,
+                                          color: Colors.deepOrangeAccent,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Text(
+                                              "4.5",
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 20.sp),
+                                            ),
+                                            Text(
+                                              "6,078",
+                                              style: TextStyle(
+                                                  color: Colors.white54,
+                                                  fontSize: 15.sp),
+                                            )
+                                          ],
+                                        )
                                       ],
                                     ),
                                   ),
@@ -120,7 +204,7 @@ class CoffeeDetailsScreen extends StatelessWidget {
                                                     "Milk",
                                                     style: TextStyle(
                                                         color: Colors.grey),
-                                                  )
+                                                  ),
                                                 ],
                                               ),
                                             )
@@ -176,153 +260,13 @@ class CoffeeDetailsScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(right: 8, left: 8),
               child: Text(
                 "Milk is the liquid produced by the mammary glands of mammals, including humans. Breast milk is the preferred food for infants, as it is well-tolerated while their digestive tracts develop and mature.",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 10.sp,
                 ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Container(
-                    child: Text(
-                      "Size",
-                      style: TextStyle(
-                        fontSize: 18.sp,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Container(
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.r),
-                        color: Colors.grey,
-                      ),
-                      child: Row(
-                        children: [
-                          Text(
-                            textAlign: TextAlign.center,
-                            "S",
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 20.sp),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Row(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8.r),
-                            color: Colors.grey,
-                          ),
-                          child: Row(
-                            children: [
-                              Text(
-                                "M",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 20.sp),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Row(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8.r),
-                            color: Colors.grey,
-                          ),
-                          child: Row(
-                            children: [
-                              Text(
-                                "L",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20.sp,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        "Price",
-                        style: TextStyle(color: Colors.grey, fontSize: 20.sp),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 40),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "\$",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20.sp,
-                                  color: Colors.deepOrangeAccent),
-                            ),
-                            Text(
-                              "4.20",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20.sp,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(8),
-                    child: Center(
-                      child: InkWell(
-                        onTap: () => pushTo(context, CartScreen()),
-                        child: Text(
-                          "Add To Cart",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20.sp),
-                        ),
-                      ),
-                    ),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16.r),
-                      color: Colors.deepOrangeAccent,
-                    ),
-                  ),
-                ],
               ),
             ),
           ],
